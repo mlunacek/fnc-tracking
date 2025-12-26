@@ -2,15 +2,15 @@
 import { Routes, Route } from "react-router-dom";
 import { Box, CssBaseline } from "@mui/material";
 
-import HomePage from "./pages/home";
 import AboutPage from "./pages/about";
+import CheckInPage from './checkin/page';
 
 function App() {
   return (
     <Box>
       <CssBaseline />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<CheckInPage />} />
         <Route path="/about" element={<AboutPage />} />
       </Routes>
     </Box>
