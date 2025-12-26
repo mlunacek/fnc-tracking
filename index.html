@@ -13,10 +13,14 @@
   <div id="root"></div>
   <script>
     (function () {
-      const params = new URLSearchParams(window.location.search);
-      const p = params.get("p");
-      if (p) {
-        window.history.replaceState(null, "", p);
+      var l = window.location;
+      if (l.search.startsWith("?/")) {
+        // Convert /?/<path>&a=b back into /<path>?a=b
+        var query = l.search.slice(2); // remove "?/"
+        var parts = query.split("&");
+        var path = parts.shift();      // first part is the path
+        var rest = parts.length ? "?" + parts.join("&") : "";
+        l.replace(l.pathname.replace(/\/$/, "") + "/" + path + rest + l.hash);
       }
     })();
   </script>

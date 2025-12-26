@@ -5,10 +5,27 @@
     <meta charset="utf-8" />
     <title>Redirecting…</title>
     <script>
-        // GitHub Pages SPA redirect
-        const repo = "/fnc-tracking";
-        const path = window.location.pathname.replace(repo, "");
-        window.location.replace(repo + "/?p=" + path + window.location.search + window.location.hash);
+        // spa-github-pages style redirect
+        // Repo name must match your GitHub Pages project repo
+        var repo = "fnc-tracking";
+
+        // Example:
+        // /fnc-tracking/about?x=1 -> /fnc-tracking/?/about&x=1
+        var l = window.location;
+        l.replace(
+            l.protocol +
+            "//" +
+            l.host +
+            "/" +
+            repo +
+            "/?/" +
+            l.pathname
+                .replace("/" + repo, "")   // remove "/fnc-tracking" prefix
+                .replace(/^\/+/, "")       // remove leading slashes
+            +
+            (l.search ? "&" + l.search.slice(1) : "") +
+            l.hash
+        );
     </script>
 </head>
 
