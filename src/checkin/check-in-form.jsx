@@ -217,6 +217,8 @@ export default function CheckInForm() {
 
             {hasCheckinInfo &&
                 <Box
+                    pl={2}
+                    pr={2}
                     sx={{
                         position: "fixed",
                         bottom: 0,
@@ -224,10 +226,10 @@ export default function CheckInForm() {
                         width: "100%",
                         py: 1.5,
                         px: 2,
-                        bgcolor: "background.paper",
-                        borderTop: "1px solid",
-                        borderColor: "divider",
-                        boxShadow: "0 -2px 8px rgba(0,0,0,0.05)",
+                        // bgcolor: "background.paper",
+                        // borderTop: "1px solid",
+                        // borderColor: "divider",
+                        // boxShadow: "0 -2px 8px rgba(0,0,0,0.05)",
                     }}
                 >
                     <Box
@@ -246,10 +248,9 @@ export default function CheckInForm() {
                             <ResetButton />{" "} this form.
                         </Typography>
 
-
-                        {/* <Typography variant="caption" color="text.disabled">
+                        <Typography variant="caption" color="text.disabled">
                             {datetime}
-                        </Typography> */}
+                        </Typography>
                     </Box>
                 </Box>
             }

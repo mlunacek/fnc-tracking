@@ -16,5 +16,5 @@ export function getTodayTimeISO() {
     const HH = String(d.getHours()).padStart(2, "0");
     const MM = String(d.getMinutes()).padStart(2, "0");
     const SS = String(d.getSeconds()).padStart(2, "0");
-    return `${yyyy}-${mm}-${dd} ${HH}-${MM}-${SS}`;
+    return `${yyyy}-${mm}-${dd} ${HH}:${MM}:${SS}`;
 }
