@@ -6,10 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "vite",
-    "lint": "eslint .",
-    "preview": "vite preview",
     "build": "vite build",
-    "predeploy": "vite build",
+    "predeploy": "yarn build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
